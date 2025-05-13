@@ -1,0 +1,126 @@
+{
+  "type": "producthunt_summary",
+  "keyword": "Microsoft",
+  "results": [
+    {
+      "name": "Microsoft To-Do",
+      "tagline": "An intelligent task management app",
+      "url": "/posts/microsoft-to-do",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Surface Laptop",
+      "tagline": "Microsoft's answer to the MacBook Air",
+      "url": "/posts/microsoft-surface-laptop",
+      "votes": 0
+    },
+    {
+      "name": "QnA Maker by Microsoft",
+      "tagline": "From FAQ to bot in minutes",
+      "url": "/posts/qna-maker-by-microsoft",
+      "votes": 0
+    },
+    {
+      "name": "Blockchain as a Service by Microsoft",
+      "tagline": "Develop, test, and deploy blockchain applications",
+      "url": "/posts/blockchain-as-a-service-by-microsoft",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Flight Simulator",
+      "tagline": "First new release in 14 years, now in real-time 4K \ud83d\udee9",
+      "url": "/posts/microsoft-flight-simulator",
+      "votes": 0
+    },
+    {
+      "name": "The New Microsoft Office",
+      "tagline": "One app for Word, Excel, and Powerpoint \ud83d\udcf2",
+      "url": "/posts/the-new-microsoft-office",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Outlook for iOS",
+      "tagline": "Official Microsoft Outlook app designed for iPhone and iPad",
+      "url": "/posts/microsoft-outlook-for-ios",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Flow",
+      "tagline": "Microsoft's version of IFTTT",
+      "url": "/posts/microsoft-flow",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Pix",
+      "tagline": "A.I. photo app to help you take awesome pics",
+      "url": "/posts/microsoft-pix",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Teams",
+      "tagline": "Microsoft's Slack competitor",
+      "url": "/posts/microsoft-teams",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Whiteboard",
+      "tagline": "The canvas where ideas, content, & people come together.",
+      "url": "/posts/microsoft-whiteboard",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Word Flow Keyboard",
+      "tagline": "A custom iOS keyboard for easy, ergonomic one-handed typing",
+      "url": "/posts/microsoft-word-flow-keyboard",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Math",
+      "tagline": "A free app to help with school math problems",
+      "url": "/posts/microsoft-math",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Hololens",
+      "tagline": "Augmented reality headset from Microsoft",
+      "url": "/posts/microsoft-hololens",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Planner",
+      "tagline": "The project management tool for Office",
+      "url": "/posts/microsoft-planner",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft To Do 2.0",
+      "tagline": "All new design to officially replace Wunderlist",
+      "url": "/posts/microsoft-to-do-2-0",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Clarity",
+      "tagline": "Website analytics powered by machine learning \ud83d\udcca",
+      "url": "/posts/microsoft-clarity",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Modern Keyboard",
+      "tagline": "New wireless Keyboard with hidden fingerprint ID",
+      "url": "/posts/microsoft-modern-keyboard",
+      "votes": 0
+    },
+    {
+      "name": "Sprinkles by Microsoft",
+      "tagline": "A smart camera with fun ideas \ud83c\udf69",
+      "url": "/posts/sprinkles-by-microsoft",
+      "votes": 0
+    },
+    {
+      "name": "Microsoft Loop",
+      "tagline": "Think, plan, and create - together",
+      "url": "/posts/microsoft-loop",
+      "votes": 0
+    }
+  ]
+}

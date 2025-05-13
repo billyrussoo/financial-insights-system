@@ -1,0 +1,28 @@
+{
+  "type": "google_trends_summary",
+  "keyword": "cloud computing",
+  "timeframe": "weekly",
+  "trend_summary": "No trend data available for 'cloud computing'.",
+  "top_regions": [
+    {
+      "region": "Nepal",
+      "score": 100
+    },
+    {
+      "region": "India",
+      "score": 99
+    },
+    {
+      "region": "Ethiopia",
+      "score": 87
+    },
+    {
+      "region": "St. Helena",
+      "score": 74
+    },
+    {
+      "region": "Cameroon",
+      "score": 67
+    }
+  ]
+}

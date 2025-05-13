@@ -1,0 +1,28 @@
+{
+  "type": "google_trends_summary",
+  "keyword": "Google",
+  "timeframe": "weekly",
+  "trend_summary": "Search interest for 'Google' averaged 78.4. Peak at 2025-05-05 13:00:00 (100), lowest at 2025-05-11 00:00:00 (59).",
+  "top_regions": [
+    {
+      "region": "Cambodia",
+      "score": 100
+    },
+    {
+      "region": "Tunisia",
+      "score": 95
+    },
+    {
+      "region": "Sri Lanka",
+      "score": 73
+    },
+    {
+      "region": "Morocco",
+      "score": 63
+    },
+    {
+      "region": "Myanmar (Burma)",
+      "score": 62
+    }
+  ]
+}
