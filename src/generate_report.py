@@ -26,11 +26,11 @@ def clean_previous_data():
                 f.unlink()
             for f in dir_path.glob("*.pdf"):
                 f.unlink()
-    print("🧹 Cleared previous run data (JSON/PDF).")
+    print(" Cleared previous run data (JSON/PDF).")
 
 
 def generate_report(persona, interests, company_size, industry, region, role, ticker, language, model="llama3"):
-    print(f"🚀 Generating report for: {interests}")
+    print(f" Generating report for: {interests}")
 
     # Ensure required folders exist
     ensure_directory("articles")

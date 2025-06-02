@@ -27,7 +27,11 @@ class ReportRequest(BaseModel):
 def generate_report_endpoint(request: ReportRequest, background_tasks: BackgroundTasks):
     if request.callback_url:
         background_tasks.add_task(process_and_callback, request)
-        return {"status": "processing", "message": "Report will be sent to callback URL shortly."}
+        return {
+            "status": "processing",
+            "message": "Report will be sent to callback URL shortly.",
+            "request_payload": request.dict()
+        }
     else:
         try:
             result = generate_report(
@@ -41,7 +45,10 @@ def generate_report_endpoint(request: ReportRequest, background_tasks: Backgroun
                 language=request.language,
                 model=request.model
             )
-            return {"json_report": result["json_report"]}
+            return {
+                "request_payload": request.dict(),
+                "json_report": result["json_report"]
+            }
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
@@ -58,9 +65,14 @@ def process_and_callback(request: ReportRequest):
             language=request.language,
             model=request.model
         )
+        callback_payload = {
+            "request_payload": request.dict(),
+            "json_report": result["json_report"]
+        }
+
         response = requests.post(
             request.callback_url,
-            json=result["json_report"],
+            json=callback_payload,
             headers={"Content-Type": "application/json"}
         )
         print(f"[CALLBACK] Status {response.status_code}: {response.text}")
@@ -72,5 +84,4 @@ if __name__ == "__main__":
     import uvicorn
     import os
     port = int(os.environ.get("PORT", 8080))
-    uvicorn.run("api.main:app", host="0.0.0.0", port=port)
-
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

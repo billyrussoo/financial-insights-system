@@ -1,0 +1,28 @@
+{
+  "type": "google_trends_summary",
+  "keyword": "Blockchain",
+  "timeframe": "weekly",
+  "trend_summary": "Search interest for 'Blockchain' averaged 65.3. Peak at 2025-05-27 08:00:00 (100), lowest at 2025-05-31 19:00:00 (38).",
+  "top_regions": [
+    {
+      "region": "St. Helena",
+      "score": 100
+    },
+    {
+      "region": "Nigeria",
+      "score": 79
+    },
+    {
+      "region": "China",
+      "score": 27
+    },
+    {
+      "region": "Myanmar (Burma)",
+      "score": 26
+    },
+    {
+      "region": "Ghana",
+      "score": 26
+    }
+  ]
+}
