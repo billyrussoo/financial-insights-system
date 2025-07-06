@@ -18,7 +18,7 @@ class ReportRequest(BaseModel):
     industry: str
     region: str
     role: str
-    ticker: List[str]  # <-- keep name 'ticker' but use List[str]
+    ticker: List[str]  
     language: str
     model: Optional[str] = "llama3"
     callback_url: Optional[str] = None
