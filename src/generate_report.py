@@ -16,7 +16,6 @@ from utils.file_io import save_json
 from utils.text_helpers import ensure_directory
 from utils.prompt_utils import fill_prompt_template
 
-
 def clean_previous_data():
     folders = ["articles", "reports/json", "reports/pdf"]
     for folder in folders:
@@ -28,19 +27,14 @@ def clean_previous_data():
                 f.unlink()
     print(" Cleared previous run data (JSON/PDF).")
 
-
 def generate_report(persona, interests, company_size, industry, region, role, ticker, language, model="llama3"):
     print(f" Generating report for: {interests}")
 
-    # Ensure required folders exist
     ensure_directory("articles")
     ensure_directory("reports/json")
     ensure_directory("reports/pdf")
-
-    # Clean old files
     clean_previous_data()
 
-    # 1. Collect & Save Data (News, Reddit, Stock)
     combined_articles = []
 
     for keyword in interests:
@@ -59,20 +53,23 @@ def generate_report(persona, interests, company_size, industry, region, role, ti
             stock_data = get_daily_adjusted(symbol)
             save_json(stock_data, f"articles/{keyword}_stock.json")
 
-    # 2. Collect Google Trends + Product Hunt
     run_producthunt_client(interests)
     run_google_trends_client(interests)
-    ticker_data = get_daily_adjusted(ticker, days=30) if ticker else []
-    # 3. Embed content
+
+    ticker_data = []
+    for t in ticker:
+        data = get_daily_adjusted(t, days=30)
+        for entry in data:
+            entry["symbol"] = t  # annotate with symbol
+            ticker_data.append(entry)
+
     all_chunks = build_context_chunks_from_keywords(interests)
     vectorstore = embed_documents(all_chunks)
 
-    # 4. Retrieve Relevant Context
     query_str = f"{', '.join(interests)} {role} financial summary"
     top_chunks = retrieve_top_k_chunks(vectorstore, query=query_str, k=15)
     combined_context = "\n".join(top_chunks)
 
-    # 5. Build Prompt & Run LLM —
     prompt = fill_prompt_template(
         persona=persona,
         context=combined_context,
@@ -86,7 +83,6 @@ def generate_report(persona, interests, company_size, industry, region, role, ti
     raw_output = run_llm(prompt)
     response_json, _ = safe_parse_llm_json(raw_output)
 
-    # 6. Save JSON Report
     filename = "_".join(interests).replace(" ", "_")
     json_path = f"reports/json/{filename}_report.json"
     save_json(response_json, json_path)
@@ -96,34 +92,3 @@ def generate_report(persona, interests, company_size, industry, region, role, ti
         "json_report": response_json,
         "text_report": response_json.get("final_summary", "")
     }
-
-
-# ✅ Standalone Test Run
-if __name__ == "__main__":
-    test_payload = {
-        "feedback": {"response": "", "comment": ""},
-        "persona": {
-            "name": "Tech Investor",
-            "description": "A Tech Investor looking for investment opportunities ",
-            "interests": ["Google", "Microsoft", "cloud computing"]
-        },
-        "companySize": "50-200",
-        "industry": "SaaS",
-        "region": "North America",
-        "role": "VP of Sales",
-        "ticker": "AAPL",
-        "language": "en"
-    }
-
-    result = generate_report(
-        persona=test_payload["persona"],
-        interests=test_payload["persona"]["interests"],
-        company_size=test_payload["companySize"],
-        industry=test_payload["industry"],
-        region=test_payload["region"],
-        role=test_payload["role"],
-        ticker=test_payload["ticker"],
-        language=test_payload["language"]
-    )
-
-    print(json.dumps(result["json_report"], indent=2))

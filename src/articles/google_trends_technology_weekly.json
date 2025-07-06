@@ -1,0 +1,28 @@
+{
+  "type": "google_trends_summary",
+  "keyword": "Technology",
+  "timeframe": "weekly",
+  "trend_summary": "Search interest for 'Technology' averaged 65.4. Peak at 2025-06-30 05:00:00 (100), lowest at 2025-07-04 22:00:00 (30).",
+  "top_regions": [
+    {
+      "region": "China",
+      "score": 100
+    },
+    {
+      "region": "Kenya",
+      "score": 77
+    },
+    {
+      "region": "Zimbabwe",
+      "score": 75
+    },
+    {
+      "region": "Ghana",
+      "score": 71
+    },
+    {
+      "region": "India",
+      "score": 71
+    }
+  ]
+}

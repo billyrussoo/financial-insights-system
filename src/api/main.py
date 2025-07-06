@@ -18,7 +18,7 @@ class ReportRequest(BaseModel):
     industry: str
     region: str
     role: str
-    ticker: str
+    ticker: List[str]  # <-- keep name 'ticker' but use List[str]
     language: str
     model: Optional[str] = "llama3"
     callback_url: Optional[str] = None
@@ -41,7 +41,7 @@ def generate_report_endpoint(request: ReportRequest, background_tasks: Backgroun
                 industry=request.industry,
                 region=request.region,
                 role=request.role,
-                ticker=request.ticker,
+                ticker=request.ticker,  # still 'ticker' in code
                 language=request.language,
                 model=request.model
             )

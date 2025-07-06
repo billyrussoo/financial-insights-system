@@ -1,0 +1,28 @@
+{
+  "type": "google_trends_summary",
+  "keyword": "Medical",
+  "timeframe": "same_day",
+  "trend_summary": "Search interest for 'Medical' averaged 66.9. Peak at 2025-07-06 00:32:00 (100), lowest at 2025-07-05 18:00:00 (54).",
+  "top_regions": [
+    {
+      "region": "Qatar",
+      "score": 100
+    },
+    {
+      "region": "United Arab Emirates",
+      "score": 87
+    },
+    {
+      "region": "Australia",
+      "score": 78
+    },
+    {
+      "region": "St. Helena",
+      "score": 66
+    },
+    {
+      "region": "Jamaica",
+      "score": 58
+    }
+  ]
+}

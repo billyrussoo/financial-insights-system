@@ -2,27 +2,27 @@
   "type": "google_trends_summary",
   "keyword": "AI",
   "timeframe": "weekly",
-  "trend_summary": "Search interest for 'AI' averaged 75.4. Peak at 2025-05-31 06:00:00 (100), lowest at 2025-05-31 20:00:00 (49).",
+  "trend_summary": "Search interest for 'AI' averaged 47.3. Peak at 2025-07-02 00:00:00 (100), lowest at 2025-07-05 20:00:00 (29).",
   "top_regions": [
     {
-      "region": "Ethiopia",
+      "region": "Myanmar (Burma)",
       "score": 100
     },
     {
       "region": "China",
-      "score": 77
+      "score": 90
     },
     {
-      "region": "Myanmar (Burma)",
-      "score": 75
+      "region": "Ethiopia",
+      "score": 88
     },
     {
       "region": "Sri Lanka",
-      "score": 64
+      "score": 79
     },
     {
-      "region": "Cambodia",
-      "score": 59
+      "region": "Pakistan",
+      "score": 78
     }
   ]
 }

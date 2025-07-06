@@ -26,7 +26,7 @@ def get_daily_adjusted(symbol, days=30):
     params = {
         "function": "TIME_SERIES_DAILY_ADJUSTED",
         "symbol": symbol,
-        "outputsize": "compact",  # max ~100 most recent days
+        "outputsize": "compact",
         "datatype": "json",
         "apikey": ALPHA_VANTAGE_API_KEY
     }
@@ -39,7 +39,7 @@ def get_daily_adjusted(symbol, days=30):
         data = response.json()
         time_series = data.get("Time Series (Daily)", {})
         formatted_data = []
-        for date, values in list(time_series.items())[:days]:  # Grab up to `days` entries
+        for date, values in list(time_series.items())[:days]:
             formatted_data.append({
                 "date": date,
                 "open": float(values["1. open"]),
@@ -53,18 +53,3 @@ def get_daily_adjusted(symbol, days=30):
     except Exception as e:
         print("❌ Failed to parse daily data:", e)
         return []
-
-# Standalone test if needed
-if __name__ == "__main__":
-    keyword = input("Enter company name or ticker: ").strip()
-    matches = search_symbol(keyword)
-    if not matches:
-        print("No matches found.")
-    else:
-        symbol = matches[0]["1. symbol"]
-        name = matches[0]["2. name"]
-        print(f"\n📊 Top Match: {name} ({symbol})")
-        data = get_daily_adjusted(symbol, days=30)
-        for entry in data:
-            print(entry)
-        time.sleep(1)
